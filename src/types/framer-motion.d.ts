@@ -47,6 +47,18 @@ declare module "framer-motion" {
     options?: { clamp?: boolean; ease?: (t: number) => number }
   ): MotionValue<T>;
 
+  export function useMotionValue<T>(initial: T): MotionValue<T>;
+
+  export function useSpring(
+    source: MotionValue<number>,
+    config?: {
+      stiffness?: number;
+      damping?: number;
+      mass?: number;
+      restDelta?: number;
+    }
+  ): MotionValue<number>;
+
   export interface MotionValue<T = number> {
     get(): T;
     set(value: T): void;

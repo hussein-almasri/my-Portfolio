@@ -1,8 +1,9 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Fira_Code } from "next/font/google";
 
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
+import { StructuredData } from "@/components/shared/structured-data";
 
 import "./globals.css";
 
@@ -10,34 +11,51 @@ const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
+  preload: true,
 });
 
 const firaCode = Fira_Code({
   subsets: ["latin"],
   variable: "--font-mono",
   display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
     default: siteConfig.title,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
   keywords: [
+    "Hussein Almasri",
+    "Flutter Developer",
+    "Mobile App Developer",
+    "Software Engineering Student",
+    "React Developer",
     "Next.js",
-    "React",
     "TypeScript",
     "Portfolio",
     "Full Stack Developer",
     "Web Developer",
+    "Dart",
+    "Firebase",
+    "UI/UX Design",
   ],
   authors: [
     {
       name: siteConfig.author.name,
+      url: siteConfig.url,
     },
   ],
   creator: siteConfig.author.name,
+  publisher: siteConfig.author.name,
+  formatDetection: {
+    telephone: false,
+    email: false,
+    address: false,
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -50,7 +68,8 @@ export const metadata: Metadata = {
         url: siteConfig.ogImage,
         width: 1200,
         height: 630,
-        alt: siteConfig.name,
+        alt: `${siteConfig.author.name} - ${siteConfig.author.role}`,
+        type: "image/png",
       },
     ],
   },
@@ -60,6 +79,7 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: [siteConfig.ogImage],
     creator: "@yourusername",
+    creatorId: "123456789",
   },
   robots: {
     index: true,
@@ -72,15 +92,37 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  alternates: {
+    canonical: siteConfig.url,
+  },
+  verification: {
+    google: "your-google-verification-code",
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon-16x16.png",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a0a0b" },
+  ],
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <StructuredData />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
