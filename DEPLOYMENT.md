@@ -19,13 +19,12 @@
 
 ### Assets
 
-- [ ] Replace `public/avatar.jpg` with your photo (square, 400x400+)
-- [ ] Replace `public/og-image.png` with a real OG image (1200x630)
+- [ ] Replace `public/avatar.svg` with your photo (square, 400x400+)
+- [ ] Replace `public/og-image.svg` with a real OG image (1200x630)
 - [ ] Replace `public/favicon.svg` with your branded favicon
-- [ ] Replace `public/favicon-16x16.png` (16x16)
-- [ ] Replace `public/apple-touch-icon.png` (180x180)
-- [ ] Replace `public/icon-192.png` (192x192)
-- [ ] Replace `public/icon-512.png` (512x512)
+- [ ] Replace `public/apple-touch-icon.svg` (180x180)
+- [ ] Replace `public/icon-192.svg` (192x192)
+- [ ] Replace `public/icon-512.svg` (512x512)
 - [ ] Replace `public/cv/hussein-almasri-cv.pdf` with your actual CV
 - [ ] Add project images to `public/projects/`
 
@@ -38,13 +37,13 @@
 
 ### Analytics
 
-- [ ] Install analytics provider (e.g., `npm i @vercel/analytics`)
+- [ ] Install analytics provider: `npm i @vercel/analytics`
 - [ ] Update `src/components/shared/analytics.tsx` with your tracking ID
-- [ ] Add `<AnalyticsProvider />` to `src/app/layout.tsx`
+- [ ] AnalyticsProvider is already wired in `src/app/layout.tsx`
 
 ### PWA
 
-- [ ] Generate proper icon files (not SVG placeholders)
+- [ ] Generate proper raster icon files if needed (SVGs are valid)
 - [ ] Update `src/app/manifest.ts` with correct metadata
 
 ## Vercel Setup
@@ -112,7 +111,7 @@ Create two environments in Vercel:
 - [ ] Run Lighthouse audit (target: 90+ on all categories)
 - [ ] Check Core Web Vitals in Google Search Console
 - [ ] Verify image optimization with next/image
-- [ ] Check bundle size with `next build`
+- [ ] Check bundle size with `npm run build`
 
 ### SEO Submission
 

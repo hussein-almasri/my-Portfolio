@@ -30,7 +30,7 @@ export const siteConfig = {
   description:
     "Flutter Developer and Software Engineering Student passionate about building modern mobile applications with beautiful UI and robust architecture.",
   url: "https://hussein-almasri.dev",
-  ogImage: "/og-image.png",
+  ogImage: "/og-image.svg",
   author: {
     name: "Hussein Almasri",
     role: "Flutter Developer",

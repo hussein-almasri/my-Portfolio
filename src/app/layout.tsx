@@ -4,6 +4,7 @@ import { Inter, Fira_Code } from "next/font/google";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { StructuredData } from "@/components/shared/structured-data";
+import { AnalyticsProvider } from "@/components/shared/analytics";
 
 import "./globals.css";
 
@@ -69,7 +70,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         alt: `${siteConfig.author.name} - ${siteConfig.author.role}`,
-        type: "image/png",
+        type: "image/svg+xml",
       },
     ],
   },
@@ -79,7 +80,6 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: [siteConfig.ogImage],
     creator: "@yourusername",
-    creatorId: "123456789",
   },
   robots: {
     index: true,
@@ -99,9 +99,9 @@ export const metadata: Metadata = {
     google: "your-google-verification-code",
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+    apple: "/apple-touch-icon.svg",
   },
 };
 
@@ -120,6 +120,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" suppressHydrationWarning>
       <head>
         <StructuredData />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.svg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
@@ -130,6 +132,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           firaCode.variable
         )}
       >
+        <AnalyticsProvider />
         {children}
       </body>
     </html>
