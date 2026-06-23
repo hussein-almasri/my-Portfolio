@@ -7,6 +7,7 @@ import { PageTransition } from "@/components/shared/page-transition";
 
 import { HeroSection } from "@/features/hero";
 import { AboutSection } from "@/features/about";
+import { JourneyTimeline } from "@/features/journey";
 import { ProjectsSection } from "@/features/projects";
 import { SkillsSection } from "@/features/skills";
 import { CertificatesSection } from "@/features/certificates";
@@ -21,6 +22,7 @@ export default function Home() {
           <PageTransition>
             <HeroSection />
             <AboutSection />
+            <JourneyTimeline />
             <ProjectsSection />
             <SkillsSection />
             <CertificatesSection />
