@@ -695,3 +695,57 @@
     box-shadow: 0 0 25px currentColor;
   }
 }
+
+/* ─── Contact Form ─── */
+.contact-input-focus {
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.contact-input-focus:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px hsl(var(--primary) / 0.15);
+}
+
+/* ─── Contact Card Hover ─── */
+.contact-card-hover {
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.contact-card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px hsl(var(--shadow-color) / 0.12);
+}
+
+/* ─── CV Download Pulse ─── */
+.cv-download-pulse {
+  animation: cv-pulse 2s ease-in-out infinite;
+}
+
+@keyframes cv-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 hsl(var(--primary) / 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px hsl(var(--primary) / 0);
+  }
+}
+
+/* ─── Success Checkmark ─── */
+.success-checkmark {
+  animation: success-pop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes success-pop {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
