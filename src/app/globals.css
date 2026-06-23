@@ -437,3 +437,47 @@
     background-position: 200% center;
   }
 }
+
+/* ─── Skill Progress Bar ─── */
+.skill-progress-bar {
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-progress-bar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.15) 50%,
+    transparent 100%
+  );
+  animation: skill-shine 2s ease-in-out infinite;
+}
+
+@keyframes skill-shine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+/* ─── Skill Shimmer Overlay ─── */
+.skill-shimmer {
+  animation: skill-shimmer-pulse 2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes skill-shimmer-pulse {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}

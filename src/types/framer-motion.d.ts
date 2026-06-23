@@ -52,4 +52,14 @@ declare module "framer-motion" {
     set(value: T): void;
     on(eventName: "change" | "renderRequest", callback: (latest: T) => void): () => void;
   }
+
+  export function useInView(
+    ref: MutableRefObject<HTMLElement | null>,
+    options?: {
+      root?: MutableRefObject<HTMLElement | null>;
+      margin?: string;
+      amount?: number | "some" | "all";
+      once?: boolean;
+    }
+  ): boolean;
 }
