@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0b"/>
+      <stop offset="100%" style="stop-color:#1a1a2e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#818cf8"/>
+      <stop offset="100%" style="stop-color:#6366f1"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Decorative elements -->
+  <circle cx="900" cy="150" r="200" fill="url(#accent)" opacity="0.08"/>
+  <circle cx="300" cy="500" r="150" fill="url(#accent)" opacity="0.05"/>
+  <!-- Grid pattern -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <!-- Avatar circle -->
+  <circle cx="600" cy="230" r="80" fill="url(#accent)" opacity="0.15"/>
+  <circle cx="600" cy="230" r="76" fill="none" stroke="url(#accent)" stroke-width="2" opacity="0.3"/>
+  <text x="600" y="252" font-family="Inter, system-ui, sans-serif" font-size="64" font-weight="700" fill="white" text-anchor="middle">H</text>
+  <!-- Name -->
+  <text x="600" y="380" font-family="Inter, system-ui, sans-serif" font-size="52" font-weight="700" fill="white" text-anchor="middle">Hussein Almasri</text>
+  <!-- Title -->
+  <text x="600" y="430" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="400" fill="#818cf8" text-anchor="middle">Flutter Developer &amp; Software Engineering Student</text>
+  <!-- URL -->
+  <text x="600" y="530" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="400" fill="rgba(255,255,255,0.4)" text-anchor="middle">hussein-almasri.dev</text>
+</svg>

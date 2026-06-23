@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { iconMap } from "@/data/portfolio";
 import type { JourneyMilestone } from "./data";
 
 interface TimelineItemProps {
@@ -12,7 +13,7 @@ interface TimelineItemProps {
 
 export function TimelineItem({ milestone, index, isLast }: TimelineItemProps) {
   const isEven = index % 2 === 0;
-  const Icon = milestone.icon;
+  const Icon = iconMap[milestone.iconName];
 
   return (
     <div className="relative flex flex-col items-center">

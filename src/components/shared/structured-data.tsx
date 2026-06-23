@@ -1,4 +1,5 @@
 import { siteConfig } from "@/config/site";
+import { contactInfo, socialLinks } from "@/data/portfolio";
 
 interface PersonSchema {
   "@context": string;
@@ -60,7 +61,7 @@ function PersonJsonLd() {
     image: `${siteConfig.url}${siteConfig.ogImage}`,
     jobTitle: siteConfig.author.role,
     description: siteConfig.author.bio,
-    sameAs: [siteConfig.links.github, siteConfig.links.linkedin, siteConfig.links.twitter],
+    sameAs: socialLinks.map((link) => link.url),
     knowsAbout: [
       "Flutter",
       "Dart",
@@ -73,7 +74,7 @@ function PersonJsonLd() {
       "Web Development",
       "Software Engineering",
     ],
-    email: siteConfig.links.email,
+    email: contactInfo.email,
   };
 
   return (

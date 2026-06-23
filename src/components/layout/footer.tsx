@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { siteConfig, navItems, socialLinks } from "@/config/site";
+import { contactInfo } from "@/data/portfolio";
 
 /* ─── Social Icons ─── */
 const socialIcons: Record<string, React.ReactNode> = {
@@ -112,7 +113,7 @@ export function Footer() {
             </h4>
             <div className="space-y-3">
               <a
-                href={`mailto:${siteConfig.links.email}`}
+                href={`mailto:${contactInfo.email}`}
                 className="group flex items-center gap-3 text-sm text-muted-foreground transition-colors duration-200 hover:text-foreground"
               >
                 <svg
@@ -128,10 +129,10 @@ export function Footer() {
                     d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
                   />
                 </svg>
-                {siteConfig.links.email}
+                {contactInfo.email}
               </a>
               <a
-                href={siteConfig.links.github}
+                href={contactInfo.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-3 text-sm text-muted-foreground transition-colors duration-200 hover:text-foreground"
@@ -146,7 +147,7 @@ export function Footer() {
                 GitHub Profile
               </a>
               <a
-                href={siteConfig.links.linkedin}
+                href={contactInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-3 text-sm text-muted-foreground transition-colors duration-200 hover:text-foreground"
