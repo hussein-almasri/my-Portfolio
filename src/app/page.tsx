@@ -9,6 +9,7 @@ import { HeroSection } from "@/features/hero";
 import { AboutSection } from "@/features/about";
 import { ProjectsSection } from "@/features/projects";
 import { SkillsSection } from "@/features/skills";
+import { CertificatesSection } from "@/features/certificates";
 import { ContactSection } from "@/features/contact";
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
             <AboutSection />
             <ProjectsSection />
             <SkillsSection />
+            <CertificatesSection />
             <ContactSection />
           </PageTransition>
         </main>

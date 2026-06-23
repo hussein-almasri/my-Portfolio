@@ -595,3 +595,51 @@
 .nav-project-card:hover {
   transform: translateY(-2px);
 }
+
+/* ─── Certificate Card ─── */
+.certificate-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.certificate-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.certificate-card:hover::before {
+  opacity: 1;
+}
+
+/* ─── Certificate Timeline ─── */
+.certificate-timeline-item {
+  position: relative;
+}
+
+.certificate-timeline-item::before {
+  content: "";
+  position: absolute;
+  left: 19px;
+  top: 40px;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, hsl(var(--border)) 0%, transparent 100%);
+}
+
+/* ─── Certificate Badge Glow ─── */
+.certificate-badge-glow {
+  animation: certificate-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes certificate-glow {
+  from {
+    box-shadow: 0 0 5px currentColor;
+  }
+  to {
+    box-shadow: 0 0 20px currentColor;
+  }
+}
