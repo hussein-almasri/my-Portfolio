@@ -12,6 +12,12 @@ export function formatDate(date: Date): string {
   }).format(date);
 }
 
+export function formatDateRange(start: Date, end?: Date): string {
+  const startStr = formatDate(start);
+  if (!end) return `${startStr} - Present`;
+  return `${startStr} - ${formatDate(end)}`;
+}
+
 export function getInitials(name: string): string {
   return name
     .split(" ")
@@ -30,4 +36,24 @@ export function debounce<T extends (...args: unknown[]) => unknown>(
     clearTimeout(timeout);
     timeout = setTimeout(() => func(...args), wait);
   };
+}
+
+export function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/[^\w ]+/g, "")
+    .replace(/ +/g, "-");
+}
+
+export function truncate(text: string, length: number): string {
+  if (text.length <= length) return text;
+  return text.slice(0, length) + "...";
+}
+
+export function getRandomItem<T>(array: T[]): T {
+  return array[Math.floor(Math.random() * array.length)];
+}
+
+export function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
