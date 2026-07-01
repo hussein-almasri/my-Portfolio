@@ -3,8 +3,10 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Initialize all modules
   Navigation.init();
+
+  renderHero();
+  renderProjects();
+
   Animations.init();
-  Projects.init();
 });
