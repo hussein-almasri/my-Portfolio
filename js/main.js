@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderCommunity();
   renderArduino();
   renderPhilosophy();
+  renderContact();
 
   Animations.init();
 });
