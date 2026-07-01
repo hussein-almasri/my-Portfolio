@@ -327,17 +327,30 @@
 }
 
 .hero__card-avatar {
-  width: 44px;
-  height: 44px;
-  border-radius: var(--radius-xl);
-  background: var(--gradient-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: var(--text-sm);
-  font-weight: var(--weight-bold);
-  color: white;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
   flex-shrink: 0;
+  overflow: hidden;
+  border: 3px solid transparent;
+  background-image: linear-gradient(171deg, rgba(17,17,19,0.9), rgba(17,17,19,0.9)), var(--gradient-primary);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(99, 102, 241, 0.1);
+  transition: transform var(--duration-normal) var(--ease-spring);
+}
+
+.hero__card-avatar:hover {
+  transform: scale(1.05);
+}
+
+.hero__card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 50%;
 }
 
 .hero__card-identity {
@@ -570,6 +583,11 @@
   .hero__card-wrapper {
     justify-content: center;
   }
+
+  .hero__card-avatar {
+    width: 95px;
+    height: 95px;
+  }
 }
 
 /* Mobile */
@@ -599,6 +617,11 @@
 
   .hero__card-inner {
     padding: var(--space-5);
+  }
+
+  .hero__card-avatar {
+    width: 80px;
+    height: 80px;
   }
 
   .hero__scroll {

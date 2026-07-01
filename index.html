@@ -77,7 +77,18 @@
       <nav class="container navbar__inner" aria-label="Main navigation">
         <!-- Left: Logo -->
         <a href="/" class="navbar__brand" aria-label="Hussein Almasri - Home">
-          <span class="navbar__logo" aria-hidden="true">HA</span>
+          <span class="navbar__logo">
+            <img
+              src="assets/images/profile.jpg"
+              alt="Hussein Almasri"
+              class="navbar__logo-img"
+              width="40"
+              height="40"
+              loading="eager"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+            />
+            <span class="navbar__logo-fallback" aria-hidden="true">HA</span>
+          </span>
           <span class="navbar__brand-text">
             <span class="navbar__name">Hussein Almasri</span>
             <span class="navbar__role">Software Engineering Student</span>
@@ -92,6 +103,8 @@
           <li><a href="#journey" class="navbar__link">Experience</a></li>
           <li><a href="#certificates" class="navbar__link">Education</a></li>
           <li><a href="#community" class="navbar__link">Community</a></li>
+          <li><a href="#arduino" class="navbar__link">Embedded Systems</a></li>
+          <li><a href="#philosophy" class="navbar__link">Mindset</a></li>
           <li><a href="#contact" class="navbar__link">Contact</a></li>
         </ul>
 
@@ -149,6 +162,8 @@
             <li><a href="#journey" class="navbar__mobile-link">Experience</a></li>
             <li><a href="#certificates" class="navbar__mobile-link">Education</a></li>
             <li><a href="#community" class="navbar__mobile-link">Community</a></li>
+            <li><a href="#arduino" class="navbar__mobile-link">Embedded Systems</a></li>
+            <li><a href="#philosophy" class="navbar__mobile-link">Mindset</a></li>
             <li><a href="#contact" class="navbar__mobile-link">Contact</a></li>
           </ul>
           <div class="navbar__mobile-actions">

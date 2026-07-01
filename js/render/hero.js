@@ -69,7 +69,16 @@ function renderHero() {
     <div class="hero__card-border" aria-hidden="true"></div>
     <div class="hero__card-inner">
       <div class="hero__card-header">
-        <div class="hero__card-avatar" aria-hidden="true">${p.initials || ''}</div>
+        <div class="hero__card-avatar">
+          <img
+            src="assets/images/profile.jpg"
+            alt="Hussein Almasri"
+            class="hero__card-img"
+            loading="lazy"
+            width="110"
+            height="110"
+          />
+        </div>
         <div class="hero__card-identity">
           <h2 class="hero__card-name">${p.name || ''}</h2>
           <p class="hero__card-location">
