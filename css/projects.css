@@ -113,6 +113,12 @@
   justify-content: space-between;
 }
 
+.project-card__badges {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1-5);
+}
+
 .project-card__number {
   font-size: var(--text-3xl);
   font-weight: var(--weight-bold);
@@ -156,6 +162,13 @@
   color: var(--color-fg-secondary);
   background-color: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--color-border);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.project-card__status--team svg {
+  flex-shrink: 0;
 }
 
 .project-card__name {
@@ -165,10 +178,27 @@
   letter-spacing: var(--tracking-tight);
 }
 
+.project-card__category-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
 .project-card__category {
   font-size: var(--text-xs);
   color: var(--color-fg-muted);
   font-weight: var(--weight-medium);
+}
+
+.project-card__year {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--text-2xs);
+  color: var(--color-fg-muted);
+  font-family: var(--font-mono);
+  letter-spacing: var(--tracking-wide);
 }
 
 /* ─── Description ─── */
@@ -318,50 +348,7 @@
    ═══════════════════════════════════════════════ */
 
 .projects__cta {
-  display: flex;
-  justify-content: center;
-  margin-top: var(--space-12);
-}
-
-.projects__view-all {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  padding: var(--space-3) var(--space-6);
-  font-size: var(--text-sm);
-  font-weight: var(--weight-medium);
-  color: var(--color-fg-secondary);
-  background-color: transparent;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  text-decoration: none;
-  cursor: pointer;
-  transition:
-    color var(--duration-fast) var(--ease-default),
-    background-color var(--duration-fast) var(--ease-default),
-    border-color var(--duration-fast) var(--ease-default),
-    box-shadow var(--duration-fast) var(--ease-default),
-    transform var(--duration-fast) var(--ease-spring);
-}
-
-.projects__view-all:hover {
-  color: var(--color-fg-primary);
-  background-color: rgba(255, 255, 255, 0.04);
-  border-color: var(--color-border-strong);
-  box-shadow: var(--shadow-sm);
-  transform: translateY(-1px);
-}
-
-.projects__view-all:active {
-  transform: translateY(0);
-}
-
-.projects__view-all svg {
-  transition: transform var(--duration-fast) var(--ease-spring);
-}
-
-.projects__view-all:hover svg {
-  transform: translateX(3px);
+  display: none;
 }
 
 /* ═══════════════════════════════════════════════

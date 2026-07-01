@@ -3,12 +3,9 @@ const personal = {
   initials: "HA",
   greeting: "Hi, I'm",
   location: "Irbid, Jordan",
-  locationFlag: "🇯🇴",
   role: "Software Engineering Student",
   focus: "Flutter Development",
   currentLearning: "Modern Web Development",
-  graduationDate: "January 2027",
-  studyStartYear: 2022,
   status: "Available for Internship",
   badgeText: "Open to Internship Opportunities",
   description:

@@ -25,10 +25,16 @@ function renderProjects() {
         <div class="project-card__top">
           <div class="project-card__meta">
             <span class="project-card__number" aria-hidden="true">${String(index + 1).padStart(2, '0')}</span>
-            <span class="project-card__status project-card__status--${project.statusClass}">${project.status}</span>
+            <div class="project-card__badges">
+              <span class="project-card__status project-card__status--${project.statusClass}">${project.status}</span>
+              ${project.team ? `<span class="project-card__status project-card__status--team">${Icons.team} Team</span>` : ''}
+            </div>
           </div>
           <h3 class="project-card__name">${project.title}</h3>
-          <span class="project-card__category">${project.category}</span>
+          <div class="project-card__category-row">
+            <span class="project-card__category">${project.category}</span>
+            <span class="project-card__year">${Icons.calendar} ${project.year}</span>
+          </div>
         </div>
         <p class="project-card__description">${project.description}</p>
         ${
@@ -39,16 +45,6 @@ function renderProjects() {
             <ul class="project-card__learnings-list" role="list">
               ${project.keyLearnings.map((l) => `<li>${l}</li>`).join('')}
             </ul>
-          </div>
-        `
-            : ''
-        }
-        ${
-          project.highlight
-            ? `
-          <div class="project-card__highlight">
-            ${Icons.check}
-            <span>${project.highlight}</span>
           </div>
         `
             : ''

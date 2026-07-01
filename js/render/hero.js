@@ -74,6 +74,7 @@ function renderHero() {
           </p>
         </div>
       </div>
+      <div class="hero__card-divider" aria-hidden="true"></div>
       <div class="hero__card-rows">
         <div class="hero__card-row">
           <span class="hero__card-label">Role</span>
@@ -88,6 +89,7 @@ function renderHero() {
           <span class="hero__card-value">${p.currentLearning}</span>
         </div>
       </div>
+      <div class="hero__card-divider" aria-hidden="true"></div>
       <div class="hero__card-status">
         <span class="hero__card-status-dot" aria-hidden="true"></span>
         <span>${p.status}</span>
