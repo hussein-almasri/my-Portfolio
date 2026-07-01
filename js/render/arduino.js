@@ -7,17 +7,23 @@ function renderArduino() {
   if (!section) return;
 
   const a = window.arduino;
+  if (!a) {
+    console.warn('Arduino data missing: window.arduino is undefined');
+    return;
+  }
+
+  const projects = Array.isArray(a.projects) ? a.projects : [];
 
   section.innerHTML = `
     <div class="container">
       <div class="arduino__header reveal">
-        <span class="arduino__label">${a.label}</span>
-        <h2 class="arduino__title">${a.title}</h2>
-        <p class="arduino__description">${a.description}</p>
+        <span class="arduino__label">${a.label || ''}</span>
+        <h2 class="arduino__title">${a.title || ''}</h2>
+        <p class="arduino__description">${a.description || ''}</p>
       </div>
 
       <div class="arduino__grid">
-        ${a.projects
+        ${projects
           .map(
             (project, i) => `
           <div class="arduino__card reveal" style="transition-delay: ${i * 80}ms">
@@ -28,15 +34,15 @@ function renderArduino() {
                 <div class="arduino__card-icon" aria-hidden="true">${ArduinoIcons.chip}</div>
               </div>
               <div class="arduino__card-meta">
-                <h3 class="arduino__card-title">${project.title}</h3>
+                <h3 class="arduino__card-title">${project.title || ''}</h3>
                 <div class="arduino__card-badges">
-                  <span class="arduino__year">${project.year}</span>
-                  <span class="arduino__status">${project.status}</span>
+                  <span class="arduino__year">${project.year || ''}</span>
+                  <span class="arduino__status">${project.status || ''}</span>
                 </div>
               </div>
-              <p class="arduino__card-desc">${project.description}</p>
+              <p class="arduino__card-desc">${project.description || ''}</p>
               <div class="arduino__card-techs" role="list" aria-label="Technologies used">
-                ${project.technologies.map((t) => `<span class="arduino__tech" role="listitem">${t}</span>`).join('')}
+                ${Array.isArray(project.technologies) ? project.technologies.map((t) => `<span class="arduino__tech" role="listitem">${t}</span>`).join('') : ''}
               </div>
             </div>
           </div>
@@ -46,7 +52,7 @@ function renderArduino() {
       </div>
 
       <blockquote class="arduino__quote reveal">
-        <p>${a.quote}</p>
+        <p>${a.quote || ''}</p>
       </blockquote>
     </div>
   `;

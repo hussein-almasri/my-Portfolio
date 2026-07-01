@@ -5,15 +5,25 @@
 document.addEventListener('DOMContentLoaded', () => {
   Navigation.init();
 
-  renderHero();
-  renderProjects();
-  renderJourney();
-  renderTechnology();
-  renderCertifications();
-  renderCommunity();
-  renderArduino();
-  renderPhilosophy();
-  renderContact();
+  const renderers = [
+    renderHero,
+    renderProjects,
+    renderJourney,
+    renderTechnology,
+    renderCertifications,
+    renderCommunity,
+    renderArduino,
+    renderPhilosophy,
+    renderContact,
+  ];
+
+  renderers.forEach((renderer) => {
+    try {
+      renderer();
+    } catch (error) {
+      console.error(`${renderer.name} failed:`, error);
+    }
+  });
 
   Animations.init();
 });

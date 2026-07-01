@@ -4,6 +4,10 @@ function renderProjects() {
   if (!header || !grid) return;
 
   const data = window.projects;
+  if (!Array.isArray(data)) {
+    console.warn('Projects data missing or invalid: window.projects is not an array');
+    return;
+  }
 
   // Section Header
   header.innerHTML = `
@@ -19,26 +23,26 @@ function renderProjects() {
   grid.innerHTML = data
     .map(
       (project, index) => `
-    <article class="project-card reveal" aria-label="${project.title} project">
+    <article class="project-card reveal" aria-label="${project.title || 'Project'} project">
       <div class="project-card__border" aria-hidden="true"></div>
       <div class="project-card__inner">
         <div class="project-card__top">
           <div class="project-card__meta">
             <span class="project-card__number" aria-hidden="true">${String(index + 1).padStart(2, '0')}</span>
             <div class="project-card__badges">
-              <span class="project-card__status project-card__status--${project.statusClass}">${project.status}</span>
+              <span class="project-card__status project-card__status--${project.statusClass || 'completed'}">${project.status || 'Completed'}</span>
               ${project.team ? `<span class="project-card__status project-card__status--team">${Icons.team} Team</span>` : ''}
             </div>
           </div>
-          <h3 class="project-card__name">${project.title}</h3>
+          <h3 class="project-card__name">${project.title || ''}</h3>
           <div class="project-card__category-row">
-            <span class="project-card__category">${project.category}</span>
-            <span class="project-card__year">${Icons.calendar} ${project.year}</span>
+            <span class="project-card__category">${project.category || ''}</span>
+            <span class="project-card__year">${Icons.calendar} ${project.year || ''}</span>
           </div>
         </div>
-        <p class="project-card__description">${project.description}</p>
+        <p class="project-card__description">${project.description || ''}</p>
         ${
-          project.keyLearnings.length > 0
+          Array.isArray(project.keyLearnings) && project.keyLearnings.length > 0
             ? `
           <div class="project-card__learnings">
             <span class="project-card__learnings-label">Key Learnings</span>
@@ -51,9 +55,9 @@ function renderProjects() {
         }
         <div class="project-card__footer">
           <div class="project-card__techs" role="list" aria-label="Technologies used">
-            ${project.technologies.map((t) => `<span class="project-card__tech" role="listitem">${t}</span>`).join('')}
+            ${Array.isArray(project.technologies) ? project.technologies.map((t) => `<span class="project-card__tech" role="listitem">${t}</span>`).join('') : ''}
           </div>
-          <a href="${project.github}" class="project-card__github" aria-label="View ${project.title} on GitHub">
+          <a href="${project.github || '#'}" class="project-card__github" aria-label="View ${project.title || 'project'} on GitHub">
             ${Icons.github}
           </a>
         </div>

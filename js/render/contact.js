@@ -12,6 +12,14 @@ function renderContact() {
   if (!section) return;
 
   const c = window.contact;
+  if (!c) {
+    console.warn('Contact data missing: window.contact is undefined');
+    return;
+  }
+
+  const card = c.card || {};
+  const actions = Array.isArray(c.actions) ? c.actions : [];
+  const facts = Array.isArray(c.facts) ? c.facts : [];
 
   const iconMap = {
     email: ContactIcons.email,
@@ -23,38 +31,38 @@ function renderContact() {
   section.innerHTML = `
     <div class="container">
       <div class="contact__header reveal">
-        <span class="contact__label">${c.label}</span>
-        <h2 class="contact__title">${c.title}</h2>
-        <p class="contact__description">${c.description}</p>
+        <span class="contact__label">${c.label || ''}</span>
+        <h2 class="contact__title">${c.title || ''}</h2>
+        <p class="contact__description">${c.description || ''}</p>
       </div>
 
       <div class="contact__card reveal">
         <div class="contact__card-border" aria-hidden="true"></div>
         <div class="contact__card-inner">
           <div class="contact__card-info">
-            <h3 class="contact__card-name">${c.card.name}</h3>
-            <p class="contact__card-role">${c.card.role}</p>
+            <h3 class="contact__card-name">${card.name || ''}</h3>
+            <p class="contact__card-role">${card.role || ''}</p>
             <p class="contact__card-location">
               ${ContactIcons.location}
-              ${c.card.location}
+              ${card.location || ''}
             </p>
             <span class="contact__card-status">
               <span class="contact__card-status-dot" aria-hidden="true"></span>
-              ${c.card.status}
+              ${card.status || ''}
             </span>
           </div>
 
           <div class="contact__actions">
-            ${c.actions
+            ${actions
               .map(
                 (a) => `
-              <a href="${a.href}" class="contact__action"${a.external ? ' target="_blank" rel="noopener noreferrer"' : ''}${a.type === 'resume' ? ' download' : ''}>
-                <div class="contact__action-icon" aria-hidden="true">${iconMap[a.type]}</div>
+              <a href="${a.href || '#'}" class="contact__action"${a.external ? ' target="_blank" rel="noopener noreferrer"' : ''}${a.type === 'resume' ? ' download' : ''}>
+                <div class="contact__action-icon" aria-hidden="true">${iconMap[a.type] || ''}</div>
                 <div class="contact__action-content">
-                  <span class="contact__action-label">${a.label}</span>
-                  <span class="contact__action-value">${a.value}</span>
+                  <span class="contact__action-label">${a.label || ''}</span>
+                  <span class="contact__action-value">${a.value || ''}</span>
                 </div>
-                <span class="contact__action-btn">${a.buttonLabel}</span>
+                <span class="contact__action-btn">${a.buttonLabel || ''}</span>
               </a>
             `,
               )
@@ -64,7 +72,7 @@ function renderContact() {
       </div>
 
       <div class="contact__facts reveal">
-        ${c.facts
+        ${facts
           .map(
             (f) => `
           <div class="contact__fact">
@@ -76,7 +84,7 @@ function renderContact() {
           .join('')}
       </div>
 
-      <p class="contact__closing reveal">${c.closing}</p>
+      <p class="contact__closing reveal">${c.closing || ''}</p>
     </div>
   `;
 }

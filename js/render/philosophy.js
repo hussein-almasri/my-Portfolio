@@ -10,25 +10,31 @@ function renderPhilosophy() {
   if (!section) return;
 
   const p = window.philosophy;
+  if (!p) {
+    console.warn('Philosophy data missing: window.philosophy is undefined');
+    return;
+  }
+
+  const cards = Array.isArray(p.cards) ? p.cards : [];
 
   section.innerHTML = `
     <div class="container">
       <div class="philosophy__header reveal">
-        <span class="philosophy__label">${p.label}</span>
-        <h2 class="philosophy__title">${p.title}</h2>
-        <p class="philosophy__description">${p.description}</p>
+        <span class="philosophy__label">${p.label || ''}</span>
+        <h2 class="philosophy__title">${p.title || ''}</h2>
+        <p class="philosophy__description">${p.description || ''}</p>
       </div>
 
       <div class="philosophy__grid">
-        ${p.cards
+        ${cards
           .map(
             (card, i) => `
           <div class="philosophy__card reveal" style="transition-delay: ${i * 80}ms">
             <div class="philosophy__card-border" aria-hidden="true"></div>
             <div class="philosophy__card-inner">
-              <div class="philosophy__card-icon" aria-hidden="true">${PhilosophyIcons[card.icon]}</div>
-              <h3 class="philosophy__card-title">${card.title}</h3>
-              <p class="philosophy__card-desc">${card.description}</p>
+              <div class="philosophy__card-icon" aria-hidden="true">${PhilosophyIcons[card.icon] || ''}</div>
+              <h3 class="philosophy__card-title">${card.title || ''}</h3>
+              <p class="philosophy__card-desc">${card.description || ''}</p>
             </div>
           </div>
         `,
@@ -37,7 +43,7 @@ function renderPhilosophy() {
       </div>
 
       <blockquote class="philosophy__quote reveal">
-        <p>${p.quote}</p>
+        <p>${p.quote || ''}</p>
       </blockquote>
     </div>
   `;

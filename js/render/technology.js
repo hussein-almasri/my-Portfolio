@@ -10,29 +10,35 @@ function renderTechnology() {
   if (!section) return;
 
   const t = window.technology;
+  if (!t) {
+    console.warn('Technology data missing: window.technology is undefined');
+    return;
+  }
+
+  const cards = Array.isArray(t.cards) ? t.cards : [];
 
   section.innerHTML = `
     <div class="container">
       <div class="tech__header reveal">
-        <span class="tech__label">${t.label}</span>
-        <h2 class="tech__title">${t.title}</h2>
-        <p class="tech__description">${t.description}</p>
+        <span class="tech__label">${t.label || ''}</span>
+        <h2 class="tech__title">${t.title || ''}</h2>
+        <p class="tech__description">${t.description || ''}</p>
       </div>
 
       <div class="tech__grid">
-        ${t.cards
+        ${cards
           .map(
             (card, i) => `
           <div class="tech__card reveal" style="transition-delay: ${i * 80}ms">
             <div class="tech__card-border" aria-hidden="true"></div>
             <div class="tech__card-inner">
               <div class="tech__card-header">
-                <div class="tech__card-icon" aria-hidden="true">${TechIcons[card.icon]}</div>
-                <h3 class="tech__card-title">${card.title}</h3>
+                <div class="tech__card-icon" aria-hidden="true">${TechIcons[card.icon] || ''}</div>
+                <h3 class="tech__card-title">${card.title || ''}</h3>
               </div>
-              <p class="tech__card-desc">${card.description}</p>
-              <div class="tech__card-chips" role="list" aria-label="${card.title} technologies">
-                ${card.technologies.map((t) => `<span class="tech__chip" role="listitem">${t}</span>`).join('')}
+              <p class="tech__card-desc">${card.description || ''}</p>
+              <div class="tech__card-chips" role="list" aria-label="${card.title || 'Technologies'} technologies">
+                ${Array.isArray(card.technologies) ? card.technologies.map((t) => `<span class="tech__chip" role="listitem">${t}</span>`).join('') : ''}
               </div>
             </div>
           </div>

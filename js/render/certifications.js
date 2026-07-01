@@ -9,17 +9,24 @@ function renderCertifications() {
   if (!section) return;
 
   const c = window.certifications;
+  if (!c) {
+    console.warn('Certifications data missing: window.certifications is undefined');
+    return;
+  }
+
+  const items = Array.isArray(c.items) ? c.items : [];
+  const cta = c.cta || {};
 
   section.innerHTML = `
     <div class="container">
       <div class="certs__header reveal">
-        <span class="certs__label">${c.label}</span>
-        <h2 class="certs__title">${c.title}</h2>
-        <p class="certs__description">${c.description}</p>
+        <span class="certs__label">${c.label || ''}</span>
+        <h2 class="certs__title">${c.title || ''}</h2>
+        <p class="certs__description">${c.description || ''}</p>
       </div>
 
       <div class="certs__grid">
-        ${c.items
+        ${items
           .map(
             (cert, i) => `
           <div class="cert__card reveal" style="transition-delay: ${i * 60}ms">
@@ -27,10 +34,10 @@ function renderCertifications() {
             <div class="cert__card-inner">
               <div class="cert__card-top">
                 <div class="cert__card-icon" aria-hidden="true">${CertIcons.badge}</div>
-                <span class="cert__category">${cert.category}</span>
+                <span class="cert__category">${cert.category || ''}</span>
               </div>
-              <h3 class="cert__title">${cert.title}</h3>
-              <p class="cert__provider">${cert.provider}</p>
+              <h3 class="cert__title">${cert.title || ''}</h3>
+              <p class="cert__provider">${cert.provider || ''}</p>
               <div class="cert__card-footer">
                 ${cert.duration ? `<span class="cert__duration">${cert.duration}</span>` : '<span></span>'}
                 <span class="cert__verified">${CertIcons.check} Verified</span>
@@ -45,10 +52,10 @@ function renderCertifications() {
       <div class="certs__cta reveal">
         <div class="certs__cta-border" aria-hidden="true"></div>
         <div class="certs__cta-inner">
-          <h3 class="certs__cta-title">${c.cta.title}</h3>
-          <p class="certs__cta-desc">${c.cta.description}</p>
-          <a href="${c.cta.buttonLink}" class="certs__cta-btn">
-            <span>${c.cta.buttonLabel}</span>
+          <h3 class="certs__cta-title">${cta.title || ''}</h3>
+          <p class="certs__cta-desc">${cta.description || ''}</p>
+          <a href="${cta.buttonLink || '#'}" class="certs__cta-btn">
+            <span>${cta.buttonLabel || ''}</span>
             ${CertIcons.arrowRight}
           </a>
         </div>
