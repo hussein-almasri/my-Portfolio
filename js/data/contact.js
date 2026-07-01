@@ -13,15 +13,15 @@ const contact = {
     {
       type: "email",
       label: "Email",
-      value: "hasoon04h@gmail.com",
-      href: "mailto:hasoon04h@gmail.com",
+      value: "husseein.almasri.dev@gmail.com",
+      href: "mailto:husseein.almasri.dev@gmail.com",
       buttonLabel: "Send Email",
       external: false,
     },
     {
       type: "linkedin",
       label: "LinkedIn",
-      value: "linkedin.com/in/hussein-almasri",
+      value: "linkedin.com/in/hussein-almasri-53a7aa350",
       href: "https://www.linkedin.com/in/hussein-almasri-53a7aa350/",
       buttonLabel: "Visit Profile",
       external: true,

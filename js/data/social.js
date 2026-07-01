@@ -1,18 +1,18 @@
 const social = {
   github: {
-    url: "https://github.com/HusseinAlmasri",
+    url: "https://github.com/hussein-almasri",
     label: "GitHub profile",
-    username: "HusseinAlmasri",
+    username: "hussein-almasri",
   },
   linkedin: {
-    url: "https://linkedin.com/in/husseinalmasri",
+    url: "https://www.linkedin.com/in/hussein-almasri-53a7aa350/",
     label: "LinkedIn profile",
-    username: "husseinalmasri",
+    username: "hussein-almasri-53a7aa350",
   },
   email: {
-    url: "mailto:hussein@example.com",
+    url: "mailto:husseein.almasri.dev@gmail.com",
     label: "Send email",
-    address: "hussein@example.com",
+    address: "husseein.almasri.dev@gmail.com",
   },
 };
 
