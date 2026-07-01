@@ -9,6 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
   renderProjects();
   renderJourney();
   renderTechnology();
+  renderCertifications();
+  renderCommunity();
+  renderArduino();
+  renderPhilosophy();
 
   Animations.init();
 });
