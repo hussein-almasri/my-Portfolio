@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   renderHero();
   renderProjects();
+  renderJourney();
 
   Animations.init();
 });
