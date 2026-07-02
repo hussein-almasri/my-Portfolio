@@ -91,6 +91,41 @@ const ProjectDetail = {
           <p class="pd__section-text">${project.overview}</p>
         </section>
 
+        ${project.role ? `
+        <!-- My Role Section -->
+        <section class="pd__section reveal">
+          <div class="pd__role-card">
+            <div class="pd__role-border" aria-hidden="true"></div>
+            <div class="pd__role-inner">
+              <div class="pd__role-header">
+                <h2 class="pd__role-title">My Role</h2>
+                <span class="pd__role-badge">${project.role.title}</span>
+              </div>
+              <ul class="pd__role-list" role="list">
+                ${project.role.responsibilities.map(item => `
+                  <li class="pd__role-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                    <span>${item}</span>
+                  </li>
+                `).join('')}
+              </ul>
+              ${project.role.note ? `
+                <div class="pd__role-note">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="12" y1="16" x2="12" y2="12"/>
+                    <line x1="12" y1="8" x2="12.01" y2="8"/>
+                  </svg>
+                  <span>${project.role.note}</span>
+                </div>
+              ` : ''}
+            </div>
+          </div>
+        </section>
+        ` : ''}
+
         <!-- Technologies Section -->
         <section class="pd__section reveal">
           <h2 class="pd__section-title">Technologies</h2>

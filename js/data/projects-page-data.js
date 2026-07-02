@@ -15,6 +15,16 @@ const ProjectsPageData = {
       team: false,
       description: 'A mobile application created during my Flutter course to help university students organize courses, assignments, notes and schedules using local storage.',
       overview: 'Student Life Manager is a comprehensive mobile application designed specifically for university students. It helps organize academic life by managing courses, tracking assignments, taking notes, and scheduling study sessions. The app uses local SQLite storage for offline functionality.',
+      role: {
+        title: 'Sole Developer',
+        responsibilities: [
+          'Designed and developed the complete Flutter application.',
+          'Built the UI and application architecture.',
+          'Integrated Firebase and local storage.',
+          'Implemented task management, subjects, notes and reminders.',
+          'Published the application on Google Play.'
+        ]
+      },
       technologies: ['Flutter', 'Dart', 'SQLite', 'GetX State Management', 'Material Design'],
       features: [
         'Course management with semester organization',
@@ -52,6 +62,16 @@ const ProjectsPageData = {
       team: true,
       description: 'A graduation project designed to simplify transportation for university students through a modern web platform that improves communication between students and transportation providers.',
       overview: 'JadaraBus is a comprehensive transportation management platform built as a graduation project. The system connects students with university transportation services, allowing route booking, schedule management, and real-time tracking. It features both student and admin interfaces.',
+      role: {
+        title: 'Full Stack Developer (Graduation Team)',
+        responsibilities: [
+          'Contributed to frontend and backend development.',
+          'Implemented transportation management features.',
+          'Collaborated with the graduation project team.',
+          'Participated in planning, testing and debugging.'
+        ],
+        note: 'This project was developed collaboratively as a university graduation project. The GitHub repository is maintained by one of the team members.'
+      },
       technologies: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'shadcn/ui', 'Supabase', 'PostgreSQL'],
       features: [
         'Student route booking and scheduling',
@@ -94,6 +114,15 @@ const ProjectsPageData = {
       team: false,
       description: 'A Capture The Flag (CTF) platform built during my Flutter Full Stack course where users solve cybersecurity challenges, submit flags, and practice security concepts through interactive challenges.',
       overview: 'SkillHub is an interactive cybersecurity learning platform that gamifies security education through Capture The Flag challenges. Users can attempt various security challenges, submit flags to earn points, and compete on leaderboards. The platform includes admin features for challenge management.',
+      role: {
+        title: 'Flutter Developer',
+        responsibilities: [
+          'Built the mobile application using Flutter.',
+          'Connected the application with backend APIs.',
+          'Implemented challenge management and leaderboard screens.',
+          'Improved the user experience and navigation.'
+        ]
+      },
       technologies: ['Flutter', 'Dart', 'Python', 'REST API', 'Git', 'Challenge Management'],
       features: [
         'User registration and authentication system',
@@ -133,6 +162,15 @@ const ProjectsPageData = {
       team: true,
       description: 'A project management system developed with my university team to practice backend development, MVC architecture, authentication and collaborative software development.',
       overview: 'FlowWork is a robust project management platform built as a collaborative team project. The system provides comprehensive tools for task tracking, team coordination, and project workflow management. It emphasizes clean architecture and scalable code practices.',
+      role: {
+        title: 'Backend Developer (Team Project)',
+        responsibilities: [
+          'Developed backend features using Laravel.',
+          'Worked on authentication and database design.',
+          'Implemented project and task management features.',
+          'Collaborated with the team using Git.'
+        ]
+      },
       technologies: ['Laravel', 'PHP', 'MySQL', 'Git', 'MVC Architecture', 'Bootstrap'],
       features: [
         'Secure user authentication system',
