@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <title>Projects — Hussein Almasri</title>
-    <meta name="description" content="All projects by Hussein Almasri — mobile apps, web platforms, and embedded systems built during my software engineering journey." />
+    <title>Certifications — Hussein Almasri</title>
+    <meta name="description" content="Professional certifications and courses earned by Hussein Almasri in mobile development, programming, cybersecurity and AI." />
     <meta name="author" content="Hussein Almasri" />
     <meta name="robots" content="index, follow" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Projects — Hussein Almasri" />
-    <meta property="og:description" content="All projects by Hussein Almasri — mobile apps, web platforms, and embedded systems." />
+    <meta property="og:title" content="Certifications — Hussein Almasri" />
+    <meta property="og:description" content="Professional certifications and courses earned by Hussein Almasri." />
 
     <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg" />
     <meta name="theme-color" content="#0a0a0b" />
@@ -27,8 +27,8 @@
     <link rel="stylesheet" href="/css/layout.css" />
     <link rel="stylesheet" href="/css/animations.css" />
     <link rel="stylesheet" href="/css/navigation.css" />
-    <link rel="stylesheet" href="/css/projects-page.css" />
-    <link rel="stylesheet" href="/css/project-detail.css" />
+    <link rel="stylesheet" href="/css/certifications-page.css" />
+    <link rel="stylesheet" href="/css/certification-detail.css" />
     <link rel="stylesheet" href="/css/footer.css" />
   </head>
   <body>
@@ -51,9 +51,10 @@
         <ul class="navbar__links" role="list">
           <li><a href="/#hero" class="navbar__link">Home</a></li>
           <li><a href="/#about" class="navbar__link">About</a></li>
-          <li><a href="/projects.html" class="navbar__link navbar__link--active">Projects</a></li>
+          <li><a href="/projects.html" class="navbar__link">Projects</a></li>
           <li><a href="/#journey" class="navbar__link">Experience</a></li>
           <li><a href="/#certificates" class="navbar__link">Education</a></li>
+          <li><a href="/certifications.html" class="navbar__link navbar__link--active">Certifications</a></li>
           <li><a href="/#community" class="navbar__link">Community</a></li>
           <li><a href="/#arduino" class="navbar__link">Embedded Systems</a></li>
           <li><a href="/#philosophy" class="navbar__link">Mindset</a></li>
@@ -91,9 +92,10 @@
           <ul class="navbar__mobile-links" role="list">
             <li><a href="/#hero" class="navbar__mobile-link">Home</a></li>
             <li><a href="/#about" class="navbar__mobile-link">About</a></li>
-            <li><a href="/projects.html" class="navbar__mobile-link navbar__link--active">Projects</a></li>
+            <li><a href="/projects.html" class="navbar__mobile-link">Projects</a></li>
             <li><a href="/#journey" class="navbar__mobile-link">Experience</a></li>
             <li><a href="/#certificates" class="navbar__mobile-link">Education</a></li>
+            <li><a href="/certifications.html" class="navbar__mobile-link navbar__link--active">Certifications</a></li>
             <li><a href="/#community" class="navbar__mobile-link">Community</a></li>
             <li><a href="/#arduino" class="navbar__mobile-link">Embedded Systems</a></li>
             <li><a href="/#philosophy" class="navbar__mobile-link">Mindset</a></li>
@@ -122,75 +124,51 @@
 
     <!-- Main Content -->
     <main id="main-content" role="main">
-      <!-- Projects View (list page) -->
-      <div id="projects-list-view">
+      <!-- Certifications List View -->
+      <div id="certifications-list-view">
         <!-- Hero -->
-        <section class="section pp-hero">
+        <section class="section cp-hero">
           <div class="container">
-            <h1 class="pp-hero__title">Projects</h1>
-            <p class="pp-hero__subtitle">Real projects that represent my journey in software engineering through mobile development, web development and embedded systems.</p>
-            <div class="pp-hero__stats" id="pp-hero-stats"></div>
+            <h1 class="cp-hero__title">Certifications</h1>
+            <p class="cp-hero__subtitle">Professional certifications and courses that validate my skills in software development, cybersecurity and emerging technologies.</p>
+            <div class="cp-hero__stats" id="cp-hero-stats"></div>
           </div>
         </section>
 
         <!-- Filters -->
         <section class="section" style="padding-top: 0; padding-bottom: 0;">
           <div class="container">
-            <div class="pp-filters">
-              <button class="pp-filters__btn pp-filters__btn--active" data-filter="all">All</button>
-              <button class="pp-filters__btn" data-filter="mobile">Mobile</button>
-              <button class="pp-filters__btn" data-filter="web">Web</button>
-              <button class="pp-filters__btn" data-filter="embedded">Embedded Systems</button>
-              <button class="pp-filters__btn" data-filter="team">Team Projects</button>
+            <div class="cp-filters">
+              <button class="cp-filters__btn cp-filters__btn--active" data-filter="all">All</button>
+              <button class="cp-filters__btn" data-filter="mobile">Mobile Development</button>
+              <button class="cp-filters__btn" data-filter="programming">Programming</button>
+              <button class="cp-filters__btn" data-filter="cybersecurity">Cybersecurity</button>
+              <button class="cp-filters__btn" data-filter="ai-community">AI & Community</button>
             </div>
           </div>
         </section>
 
-        <!-- Featured Projects -->
-        <section class="section pp-featured">
+        <!-- Certifications Grid -->
+        <section class="section cp-grid-section">
           <div class="container">
-            <div class="pp-featured__grid" id="pp-featured-grid"></div>
-          </div>
-        </section>
-
-        <!-- Embedded Systems Projects -->
-        <section class="section pp-embedded">
-          <div class="container">
-            <div class="pp-embedded__header reveal">
-              <span class="pp-embedded__label">Hardware Projects</span>
-              <h2 class="pp-embedded__title">Embedded Systems Projects</h2>
-              <p class="pp-embedded__desc">Hands-on projects exploring Arduino, sensors, and embedded programming.</p>
-            </div>
-            <div class="pp-embedded__grid" id="pp-embedded-grid"></div>
-          </div>
-        </section>
-
-        <!-- Learning & Mini Projects -->
-        <section class="section pp-mini">
-          <div class="container">
-            <div class="pp-mini__header reveal">
-              <span class="pp-mini__label">Practice Projects</span>
-              <h2 class="pp-mini__title">Learning & Mini Projects</h2>
-              <p class="pp-mini__desc">Additional experiments and practice projects that helped me grow as a developer.</p>
-            </div>
-            <div class="pp-mini__grid" id="pp-mini-grid"></div>
+            <div class="cp-grid" id="cp-grid"></div>
           </div>
         </section>
 
         <!-- CTA -->
         <section class="section">
           <div class="container">
-            <div class="pp-cta reveal">
-              <div class="pp-cta__border" aria-hidden="true"></div>
-              <div class="pp-cta__inner">
-                <h2 class="pp-cta__title">Interested in working together?</h2>
-                <p class="pp-cta__desc">I'm always excited to learn, collaborate and build meaningful software projects.</p>
-                <div class="pp-cta__buttons">
-                  <a href="/#contact" class="pp-cta__btn pp-cta__btn--primary">
+            <div class="cp-cta reveal">
+              <div class="cp-cta__border" aria-hidden="true"></div>
+              <div class="cp-cta__inner">
+                <h2 class="cp-cta__title">Want to verify any certificate?</h2>
+                <p class="cp-cta__desc">Feel free to contact me for verification or to discuss my qualifications.</p>
+                <div class="cp-cta__buttons">
+                  <a href="/#contact" class="cp-cta__btn cp-cta__btn--primary">
                     <span>Contact Me</span>
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
                   </a>
-                  <a href="assets/documents/Hussein_Almasri_CV.pdf" class="pp-cta__btn pp-cta__btn--secondary" download="Hussein_Almasri_CV.pdf">
+                  <a href="assets/documents/Hussein_Almasri_CV.pdf" class="cp-cta__btn cp-cta__btn--secondary" download="Hussein_Almasri_CV.pdf">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                     <span>Download CV</span>
                   </a>
@@ -201,10 +179,10 @@
         </section>
       </div>
 
-      <!-- Project Detail View -->
-      <div id="project-detail-view" class="pd-view">
-        <section class="section pd-hero">
-          <div class="container" id="pd-content"></div>
+      <!-- Certification Detail View -->
+      <div id="certification-detail-view" class="cd-view">
+        <section class="section cd-hero">
+          <div class="container" id="cd-content"></div>
         </section>
       </div>
     </main>
@@ -220,10 +198,10 @@
     <script src="/js/utils.js" defer></script>
     <script src="/js/navigation.js" defer></script>
     <script src="/js/data/config.js" defer></script>
-    <script src="/js/data/projects-page-data.js" defer></script>
+    <script src="/js/data/certifications-page-data.js" defer></script>
     <script src="/js/render/gallery.js" defer></script>
     <script src="/js/render/lightbox.js" defer></script>
-    <script src="/js/render/project-detail.js" defer></script>
-    <script src="/js/projects-page.js" defer></script>
+    <script src="/js/render/certification-detail.js" defer></script>
+    <script src="/js/certifications-page.js" defer></script>
   </body>
 </html>

@@ -76,12 +76,12 @@
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
-  opacity: 0.25;
+  opacity: 0.3;
   transition: opacity var(--duration-normal) var(--ease-default);
 }
 
 .philosophy__card:hover .philosophy__card-border {
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 /* Card Inner */
@@ -145,7 +145,7 @@
 }
 
 .philosophy__quote p {
-  font-size: clamp(var(--text-lg), 2vw + 0.5rem, var(--text-2xl));
+  font-size: clamp(1.125rem, 2vw + 0.5rem, 1.5rem);
   font-weight: var(--weight-light);
   font-style: italic;
   color: var(--color-fg-secondary);

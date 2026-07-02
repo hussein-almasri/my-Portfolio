@@ -20,7 +20,7 @@ const CertificateDetail = {
       <article class="cd" data-cert-id="${cert.id}">
         <!-- Back Button -->
         <div class="cd__back">
-          <a href="certificates.html" class="cd__back-link">
+          <a href="certifications.html" class="cd__back-link">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <line x1="19" y1="12" x2="5" y2="12"/>
               <polyline points="12 19 5 12 12 5"/>
@@ -132,7 +132,7 @@ const CertificateDetail = {
         <!-- Certificate Navigation -->
         <nav class="cd__navigation reveal" aria-label="Certificate navigation">
           ${prevCert ? `
-            <a href="certificates.html#${prevCert.id}" class="cd__nav-link cd__nav-link--prev">
+            <a href="certifications.html#${prevCert.id}" class="cd__nav-link cd__nav-link--prev">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <line x1="19" y1="12" x2="5" y2="12"/>
                 <polyline points="12 19 5 12 12 5"/>
@@ -144,7 +144,7 @@ const CertificateDetail = {
             </a>
           ` : '<div></div>'}
           ${nextCert ? `
-            <a href="certificates.html#${nextCert.id}" class="cd__nav-link cd__nav-link--next">
+            <a href="certifications.html#${nextCert.id}" class="cd__nav-link cd__nav-link--next">
               <div class="cd__nav-content">
                 <span class="cd__nav-label">Next Certificate</span>
                 <span class="cd__nav-title">${nextCert.title}</span>

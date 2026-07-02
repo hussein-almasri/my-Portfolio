@@ -82,7 +82,9 @@ const ProjectsPage = {
       next: currentIndex < allProjects.length - 1 ? allProjects[currentIndex + 1] : null
     };
 
-    this.pdContent.innerHTML = ProjectDetail.render(project, navigation);
+    if (this.pdContent) {
+      this.pdContent.innerHTML = ProjectDetail.render(project, navigation);
+    }
 
     requestAnimationFrame(() => {
       ProjectDetail.initGalleries();
@@ -346,5 +348,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const fy = document.getElementById('footer-year');
   if (fy) fy.textContent = new Date().getFullYear();
 
-  ProjectsPage.init();
+  try {
+    ProjectsPage.init();
+  } catch (error) {
+    console.error('ProjectsPage.init failed:', error);
+  }
 });

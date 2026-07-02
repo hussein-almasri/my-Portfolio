@@ -5,6 +5,7 @@
 
 /* ─── Certificate Detail Container ─── */
 .cd-view {
+  display: none;
   min-height: 100vh;
 }
 

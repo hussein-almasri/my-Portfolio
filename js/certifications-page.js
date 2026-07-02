@@ -12,8 +12,8 @@ const CertificatesPage = {
    * Initialize the certificates page
    */
   init() {
-    this.listView = document.getElementById('certificates-list-view');
-    this.detailView = document.getElementById('certificate-detail-view');
+    this.listView = document.getElementById('certifications-list-view');
+    this.detailView = document.getElementById('certification-detail-view');
     this.cdContent = document.getElementById('cd-content');
 
     if (!this.listView || !this.detailView) return;
@@ -79,7 +79,9 @@ const CertificatesPage = {
       next: currentIndex < allCerts.length - 1 ? allCerts[currentIndex + 1] : null
     };
 
-    this.cdContent.innerHTML = CertificateDetail.render(certificate, navigation);
+    if (this.cdContent) {
+      this.cdContent.innerHTML = CertificateDetail.render(certificate, navigation);
+    }
 
     requestAnimationFrame(() => {
       this.initScrollReveal();
@@ -152,7 +154,7 @@ const CertificatesPage = {
                 <span class="cp-card__badge">${cert.category}</span>
                 ${cert.duration ? `<span class="cp-card__badge cp-card__badge--duration">${cert.duration}</span>` : ''}
               </div>
-              <a href="certificates.html#${cert.id}" class="cp-card__btn" aria-label="View ${cert.title} details">
+              <a href="certifications.html#${cert.id}" class="cp-card__btn" aria-label="View ${cert.title} details">
                 View Details
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
               </a>
@@ -236,5 +238,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const fy = document.getElementById('footer-year');
   if (fy) fy.textContent = new Date().getFullYear();
 
-  CertificatesPage.init();
+  try {
+    CertificatesPage.init();
+  } catch (error) {
+    console.error('CertificatesPage.init failed:', error);
+  }
 });

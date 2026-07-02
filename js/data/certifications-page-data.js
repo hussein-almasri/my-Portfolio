@@ -98,7 +98,7 @@ const CertificatesPageData = {
       image: '/assets/Certificates/PythonEssentials2.png',
       imageAlt: 'Python Essentials 2 Certificate',
       description: 'An advanced Python programming course covering intermediate concepts, modules, file handling, and object-oriented programming.',
-      overview: 'Building on the fundamentals covered in Python Essentials 1, this course dives deeper into intermediate Python concepts. Topics include advanced data structures, module development, file processing, and comprehensive object-oriented programming. The curriculum emphasizes practical coding skills and problem-solving techniques.',',
+      overview: 'Building on the fundamentals covered in Python Essentials 1, this course dives deeper into intermediate Python concepts. Topics include advanced data structures, module development, file processing, and comprehensive object-oriented programming. The curriculum emphasizes practical coding skills and problem-solving techniques.',
       skills: [
         'Advanced Python data structures',
         'Module and package development',

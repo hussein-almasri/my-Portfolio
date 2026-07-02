@@ -76,18 +76,18 @@
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
-  opacity: 0.25;
+  opacity: 0.3;
   transition: opacity var(--duration-normal) var(--ease-default);
 }
 
 .cert__card:hover .cert__card-border {
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 /* Card Inner */
 .cert__card-inner {
   position: relative;
-  padding: var(--space-5);
+  padding: var(--space-6);
   border-radius: inherit;
   background-color: rgba(17, 17, 19, 0.6);
   backdrop-filter: blur(var(--blur-md)) saturate(150%);
