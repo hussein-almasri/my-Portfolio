@@ -6,44 +6,6 @@
 const ProjectsPageData = {
   featured: [
     {
-      id: 'workflow',
-      title: 'Workflow',
-      category: 'Team Project',
-      year: '2025',
-      status: 'Completed',
-      statusClass: 'completed',
-      team: true,
-      description: 'A comprehensive project management system developed with my university team to practice backend development, MVC architecture, authentication and collaborative software development.',
-      overview: 'Workflow is a full-featured project management platform built as a team graduation project. The system provides task management, team collaboration, calendar scheduling, and project tracking capabilities. It was designed to streamline workflow management for development teams.',
-      technologies: ['Laravel', 'PHP', 'MySQL', 'Git', 'MVC Architecture', 'Blade Templates'],
-      features: [
-        'User authentication and authorization system',
-        'Project and task management dashboard',
-        'Team collaboration with role-based access',
-        'Calendar view for scheduling and deadlines',
-        'Real-time notifications and updates',
-        'Responsive design for all devices'
-      ],
-      learned: [
-        'MVC architecture patterns',
-        'Database design and optimization',
-        'Team collaboration with Git workflows',
-        'Authentication and authorization implementation',
-        'RESTful API design principles'
-      ],
-      contribution: 'Implemented the authentication system and MVC backend architecture. Developed team collaboration features and integrated the calendar scheduling system. Managed database schema design and API endpoints.',
-      github: 'https://github.com/hussein-almasri/flowwork',
-      playStore: null,
-      liveDemo: null,
-      gallery: [
-        { src: '/assets/projects/flowwork/dashboard.png', alt: 'Workflow dashboard showing project overview' },
-        { src: '/assets/projects/flowwork/projects.png', alt: 'Projects list view' },
-        { src: '/assets/projects/flowwork/tasks.png', alt: 'Task management interface' },
-        { src: '/assets/projects/flowwork/calendar.png', alt: 'Calendar scheduling view' },
-        { src: '/assets/projects/flowwork/team.png', alt: 'Team collaboration features' }
-      ]
-    },
-    {
       id: 'student-life-manager',
       title: 'Student Life Manager',
       category: 'Mobile Application',
@@ -70,7 +32,7 @@ const ProjectsPageData = {
         'State management with GetX'
       ],
       contribution: 'Designed and developed the entire application from scratch. Implemented SQLite local database for offline storage, created the complete UI/UX design, and successfully published the app on Google Play Store.',
-      github: 'https://github.com/hussein-almasri/student-life-manager',
+      github: SiteConfig.github['student-life-manager'],
       playStore: 'https://play.google.com/store/apps/details?id=com.hussein.student_life_manager',
       liveDemo: null,
       gallery: [
@@ -107,7 +69,9 @@ const ProjectsPageData = {
         'Team collaboration with Git and Trello'
       ],
       contribution: 'Co-developed the frontend with React and TypeScript. Implemented Supabase integration for real-time data, managed PostgreSQL database schema design, and developed the admin panel interface.',
-      github: 'https://github.com/hussein-almasri/jadarabus',
+      github: SiteConfig.github['jadarabus'],
+      githubLabel: 'View Team Repository',
+      githubNote: 'This project was developed collaboratively as a university graduation project. The repository is maintained by one of the team members.',
       playStore: null,
       liveDemo: null,
       gallery: [
@@ -147,7 +111,7 @@ const ProjectsPageData = {
         'Cybersecurity challenge mechanics'
       ],
       contribution: 'Built the complete Flutter frontend with responsive UI, integrated Python REST API backend, implemented user authentication and challenge submission flow, and developed the admin panel for challenge management.',
-      github: 'https://github.com/hussein-almasri/skillhub',
+      github: SiteConfig.github['skillhub'],
       playStore: null,
       liveDemo: null,
       gallery: [
@@ -186,14 +150,13 @@ const ProjectsPageData = {
         'Team development workflows'
       ],
       contribution: 'Implemented the authentication system and MVC backend architecture. Developed core team collaboration features and managed database schema design for optimal performance.',
-      github: 'https://github.com/hussein-almasri/flowwork',
+      github: SiteConfig.github['flowwork'],
       playStore: null,
       liveDemo: null,
       gallery: [
         { src: '/assets/projects/flowwork/dashboard.png', alt: 'FlowWork dashboard overview' },
         { src: '/assets/projects/flowwork/projects.png', alt: 'Projects management view' },
         { src: '/assets/projects/flowwork/tasks.png', alt: 'Task tracking interface' },
-        { src: '/assets/projects/flowwork/calendar.png', alt: 'Calendar and scheduling' },
         { src: '/assets/projects/flowwork/team.png', alt: 'Team collaboration features' }
       ]
     }
@@ -291,7 +254,7 @@ const ProjectsPageData = {
   ],
 
   stats: [
-    { icon: 'projects', label: '5 Featured Projects' },
+    { icon: 'projects', label: '4 Featured Projects' },
     { icon: 'check', label: '1 Published App' },
     { icon: 'team', label: 'Team & Individual Projects' },
     { icon: 'calendar', label: '2024–2026' }
