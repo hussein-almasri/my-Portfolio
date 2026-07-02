@@ -28,7 +28,7 @@ const CertificatesPageData = {
         'Material Design and Cupertino widgets',
         'App publishing on Google Play Store'
       ],
-      date: '2024',
+      date: '2026',
       credentialId: null,
       verificationUrl: null
     },
@@ -82,7 +82,7 @@ const CertificatesPageData = {
         'String and list operations',
         'Code documentation and best practices'
       ],
-      date: '2024',
+      date: '2026',
       credentialId: null,
       verificationUrl: 'https://pythoninstitute.org/pcep'
     },
@@ -109,7 +109,7 @@ const CertificatesPageData = {
         'Advanced function techniques',
         'Code optimization and best practices'
       ],
-      date: '2024',
+      date: '2026',
       credentialId: null,
       verificationUrl: 'https://www.netacad.com/'
     },
@@ -136,7 +136,7 @@ const CertificatesPageData = {
         'Templates and generic programming',
         'Algorithm and data structure implementation'
       ],
-      date: '2024',
+      date: '2026',
       credentialId: null,
       verificationUrl: null
     },
@@ -161,7 +161,7 @@ const CertificatesPageData = {
         'Problem-solving in competitive environments',
         'Presentation and communication skills'
       ],
-      date: '2024',
+      date: '2025',
       credentialId: null,
       verificationUrl: null
     }
@@ -171,7 +171,7 @@ const CertificatesPageData = {
     { icon: 'certificates', label: '6 Certificates' },
     { icon: 'hours', label: '110+ Hours of Training' },
     { icon: 'categories', label: '4 Skill Categories' },
-    { icon: 'calendar', label: '2024' }
+    { icon: 'calendar', label: '2024–2026' }
   ]
 };
 

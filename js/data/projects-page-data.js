@@ -98,7 +98,6 @@ const ProjectsPageData = {
         { src: '/assets/projects/jadarabus/Home.png', alt: 'JadaraBus home page' },
         { src: '/assets/projects/jadarabus/login.png', alt: 'Login interface' },
         { src: '/assets/projects/jadarabus/manage.png', alt: 'Management dashboard' },
-        { src: '/assets/projects/jadarabus/tasks.png', alt: 'Task management view' },
         { src: '/assets/projects/jadarabus/CreateRoute.png', alt: 'Route creation interface' },
         { src: '/assets/projects/jadarabus/ChoseRoute.png', alt: 'Route selection screen' },
         { src: '/assets/projects/jadarabus/AdminPanel.png', alt: 'Admin panel dashboard' }
