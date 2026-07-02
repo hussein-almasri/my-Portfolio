@@ -56,7 +56,7 @@ function renderContact() {
             ${actions
               .map(
                 (a) => `
-              <a href="${a.href || '#'}" class="contact__action"${a.external ? ' target="_blank" rel="noopener noreferrer"' : ''}${a.type === 'resume' ? ' download' : ''}>
+              <a href="${a.href || '#'}" class="contact__action"${a.external ? ' target="_blank" rel="noopener noreferrer"' : ''}${a.download ? ` download="${a.download}"` : ''}>
                 <div class="contact__action-icon" aria-hidden="true">${iconMap[a.type] || ''}</div>
                 <div class="contact__action-content">
                   <span class="contact__action-label">${a.label || ''}</span>

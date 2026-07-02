@@ -38,9 +38,10 @@ const contact = {
       type: "resume",
       label: "Resume",
       value: "Download CV",
-      href: "/assets/files/cv.pdf",
+      href: window.SiteConfig.cvPath,
       buttonLabel: "Download CV",
       external: false,
+      download: window.SiteConfig.cvFilename,
     },
   ],
   facts: [

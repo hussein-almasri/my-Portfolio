@@ -53,7 +53,7 @@ function renderHero() {
       <span>Explore My Projects</span>
       ${Icons.arrowUpRight}
     </a>
-    <a href="/assets/files/resume.pdf" class="hero__btn hero__btn--secondary" download aria-label="Download Resume">
+    <a href="${window.SiteConfig.cvPath}" class="hero__btn hero__btn--secondary" download="${window.SiteConfig.cvFilename}" aria-label="Download Resume">
       ${Icons.download}
       <span>Download Resume</span>
     </a>
