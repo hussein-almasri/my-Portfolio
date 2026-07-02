@@ -68,7 +68,7 @@ const CertificatesPage = {
     }
 
     this.listView.style.display = 'none';
-    this.detailView.style.display = '';
+    this.detailView.style.display = 'block';
     document.title = `${certificate.title} — Hussein Almasri`;
 
     const allCerts = CertificatesPageData.certificates;

@@ -71,7 +71,7 @@ const ProjectsPage = {
     }
 
     this.listView.style.display = 'none';
-    this.detailView.style.display = '';
+    this.detailView.style.display = 'block';
     document.title = `${project.title} — Hussein Almasri`;
 
     const allProjects = [...ProjectsPageData.featured, ...ProjectsPageData.embedded];
